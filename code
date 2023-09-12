@@ -1,0 +1,190 @@
+import requests
+from bs4 import BeautifulSoup
+
+def get_html(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        return BeautifulSoup(response.text, 'html.parser')
+    else:
+        print("Failed to fetch the page:", response.status_code)
+        return None
+
+def extract_search_results(soup):
+    search_results = []
+    result_tags = soup.find_all('h3', class_='search-result-title')
+    for result_tag in result_tags:
+        link = result_tag.a['href']
+        title = result_tag.a.text
+        search_results.append({'title': title, 'link': link})
+    return search_results
+
+def scrape_search_results(query, num_pages=1):
+    search_results = []
+    query = query.replace(' ', '+')  # Replace spaces with '+' for the URL
+    base_url = f'https://www.reuters.com/search/news?sortBy=&dateRange=&blob={query}&pn='
+
+    for page in range(1, num_pages+1):  # Start from page 1
+        url = base_url + str(page)
+        soup = get_html(url)
+        if soup is not None:
+            search_results.extend(extract_search_results(soup))
+    
+    return search_results
+
+
+query = 'Medicine'
+num_pages_to_scrape = 1
+search_results = scrape_search_results(query, num_pages=num_pages_to_scrape)
+
+# Print the search results
+for index, result in enumerate(search_results, start=1):
+    print(f"Result {index}:")
+    print("Title:", result['title'])
+    print("Link:", result['link'])
+    print("\n")
+
+    import requests
+from bs4 import BeautifulSoup
+
+def get_html(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        return BeautifulSoup(response.text, 'html.parser')
+    else:
+        print("Failed to fetch the page:", response.status_code)
+        return None
+
+def extract_search_results(soup):
+    search_results = []
+    result_tags = soup.find_all('h3', class_='search-result-title')
+    for result_tag in result_tags:
+        link = result_tag.a['href']
+        title = result_tag.a.text
+        search_results.append({'title': title, 'link': link})
+    return search_results
+
+def scrape_search_results(query, num_pages=1):
+    search_results = []
+    query = query.replace(' ', '+')  # Replace spaces with '+' for the URL
+    base_url = f'https://www.reuters.com/search/news?sortBy=&dateRange=&blob={query}&pn='
+
+    for page in range(1, num_pages+1):  # Start from page 1
+        url = base_url + str(page)
+        soup = get_html(url)
+        if soup is not None:
+            search_results.extend(extract_search_results(soup))
+    
+    return search_results
+
+# Example usage:
+query = 'Medicine'
+num_pages_to_scrape = 1
+search_results = scrape_search_results(query, num_pages=num_pages_to_scrape)
+
+# Print the search results
+for index, result in enumerate(search_results, start=1):
+    print(f"Result {index}:")
+    print("Title:", result['title'])
+    print("Link:", result['link'])
+    print("\n")
+
+#Returned Results after execution of code
+#would copy past returned link after reuters.com
+Result 1:
+Title: Putin says Russian pharmacies are short on some medicines
+Link: /article/idUSS8N30Z01I
+
+
+Result 2:
+Title: Greece takes measures to tackle medicine shortages
+Link: /article/idUSKBN2TJ152
+
+
+Result 3:
+Title: Greece takes measures to tackle medicine shortages
+Link: /article/idUSL8N33P3X5
+
+
+Result 4:
+Title: Switzerland experiencing medicine shortages says pharmacists association
+Link: /article/idUSL1N32L0CK
+
+
+Result 5:
+Title: Switzerland experiencing medicine shortages says pharmacists association
+Link: /article/idUSKBN2SF0BY
+
+
+Result 6:
+Title: Tunisia's financial crisis leaves the sick struggling to find medicine
+Link: /article/idUSKBN2XN36I
+
+
+Result 7:
+Title: Tunisia's financial crisis leaves the sick struggling to find medicine
+Link: /article/idUSL8N37T1OQ
+
+
+Result 8:
+Title: BRIEF-Sanofi CEO Paul Hudson Says Will Launch A Medicine For Hemophilia A This Year - CNBC Interview
+Link: /article/idUSFWN34416S
+
+
+Result 9:
+Title: Svante Paabo wins 2022 Nobel Prize in Medicine
+Link: /article/idUSO9N30S00W
+
+
+Result 10:
+Title: EU drug regulator must do more to tackle medicine shortages - patient orgs
+Link: /article/idUSL8N34933S
+
+
+Result 1:
+Title: Putin says Russian pharmacies are short on some medicines
+Link: /article/idUSS8N30Z01I
+
+
+Result 2:
+Title: Greece takes measures to tackle medicine shortages
+Link: /article/idUSKBN2TJ152
+
+
+Result 3:
+Title: Greece takes measures to tackle medicine shortages
+Link: /article/idUSL8N33P3X5
+
+
+Result 4:
+Title: Switzerland experiencing medicine shortages says pharmacists association
+Link: /article/idUSL1N32L0CK
+
+
+Result 5:
+Title: Switzerland experiencing medicine shortages says pharmacists association
+Link: /article/idUSKBN2SF0BY
+
+
+Result 6:
+Title: Tunisia's financial crisis leaves the sick struggling to find medicine
+Link: /article/idUSKBN2XN36I
+
+
+Result 7:
+Title: Tunisia's financial crisis leaves the sick struggling to find medicine
+Link: /article/idUSL8N37T1OQ
+
+
+Result 8:
+Title: BRIEF-Sanofi CEO Paul Hudson Says Will Launch A Medicine For Hemophilia A This Year - CNBC Interview
+Link: /article/idUSFWN34416S
+
+
+Result 9:
+Title: Svante Paabo wins 2022 Nobel Prize in Medicine
+Link: /article/idUSO9N30S00W
+
+
+Result 10:
+Title: EU drug regulator must do more to tackle medicine shortages - patient orgs
+Link: /article/idUSL8N34933S
