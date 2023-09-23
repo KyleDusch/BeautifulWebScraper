@@ -6,3 +6,7 @@ The main genesis of the project was to efficiently scrape a news source in order
 I want to be able to improve the scraping and am looking at packages like asyncio and multithreading to concurrently scrape. As well as adding an API to the webscraper too. 
 
 Also I found an article regarding the legality of webscraping as there is a huge usage of bots especially with web scraping for sneakers. https://mccarthylg.com/a-comprehensive-legal-guide-to-web-scraping-in-the-us/ 
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+
+![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white) 
