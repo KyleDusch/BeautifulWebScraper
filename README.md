@@ -3,7 +3,7 @@ Python based Web Scraper in Jupyter Notebooks implemented using Beautiful Soup P
 
 The main genesis of the project was to efficiently scrape a news source in order to provide myself and my colleagues at the fire station up to date articles in order to learn and discuss improvements to new medicines. As part of the fire service, medicine is always evolving so utlizing modern tools to understand modern changes in medicine can then be discussed to our Physicians whom write the protocols and general orders which we follow in patient care. 
 
-I want to be able to improve the scraping and am looking at packages like asyncio and multithreading to concurrently scrape. As well as adding an API to the webscraper too. 
+I want to be able to improve the scraping and am looking at packages like asyncio and multithreading to concurrently scrape. As well as adding an API to the webscraper too. Reuters was chosen due to its reputation and unbiased dissemination of knowledge and information, sifting through opinion pieces was not the aim in regards to this project. May be though of subsequent projects later. 
 
 Also I found an article regarding the legality of webscraping as there is a huge usage of bots especially with web scraping for sneakers. https://mccarthylg.com/a-comprehensive-legal-guide-to-web-scraping-in-the-us/ 
 
