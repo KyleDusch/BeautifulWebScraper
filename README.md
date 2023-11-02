@@ -3,7 +3,9 @@ Python based Web Scraper in Jupyter Notebooks implemented using Beautiful Soup P
 
 The main genesis of the project was to efficiently scrape a news source in order to provide myself and my colleagues at the fire station up to date articles in order to learn and discuss improvements to new medicines. Medicine is always evolving so utlizing modern tools to understand modern changes in medicine can then be discussed to our Physicians whom write the protocols and general orders which we follow in patient care. 
 
-I want to be able to improve the scraping and am looking at packages like asyncio and multithreading to concurrently scrape. As well as adding an API to the webscraper too, such as Rest API. Reuters was chosen due to its reputation and unbiased dissemination of information. I also implemented ChatGpt to be an efficient debugger and improve suggestions as ChatGpt can rapidly analyze and suggest improvements instanteously which is useful. 
+I want to be able to improve the scraping and am looking at packages like asyncio and multithreading to concurrently scrape. As well as adding an API to the webscraper too, such as Rest API. 
+
+Reuters was chosen due to its reputation and unbiased dissemination of information. I also implemented ChatGpt to be an efficient debugger and improve suggestions as ChatGpt can rapidly analyze and suggest improvements instanteously which is useful. 
 
 Sifting through opinion pieces was not the aim in regards to this project; may be used in future projects, related to opinions of certain topics (athletes, new laws implemented etc) on social media sites. 
 
